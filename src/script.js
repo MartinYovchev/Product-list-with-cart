@@ -3,7 +3,6 @@ const createItem = (image, dessertType, dessertName, price)=>{
     itemDiv.id = "item";
     
     const pic = document.createElement('img');
-    console.log("Image source:", pic.src);
     pic.src = image;
     pic.alt = "dessert";
     pic.width = 200;
@@ -40,15 +39,11 @@ const createItem = (image, dessertType, dessertName, price)=>{
 
 }
 
-
-
-
 fetch("data.json").then(response =>{
     if(!response.ok){
         throw new Error("Error fetching Json file!" + response.statusText);
     }
     return response.json()}).then(data =>{
-        console.log(data);
         const cart = document.getElementById("cart");  
 
         data.forEach(item => {

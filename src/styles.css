@@ -1,11 +1,35 @@
+
+*{
+    font-family: "./assets/fonts/static/RedHatText-Regular.ttf";
+}
+
+body{
+    width: 1440px;
+    height: 1080px;
+}
+
 #cart {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 60%;
     gap: 10px;
+}
+
+img {
+    border-radius: 10px;
 }
 
 #item {
     padding: 20px;
     border: 1px solid #ccc;
 }
+
+#add-to-cart{
+    display: flex;
+    position: relative;
+    margin-left: 35%;
+    margin-top: -7%;
+    cursor: pointer;
+}
+
+
