@@ -1,11 +1,18 @@
 
 *{
-    font-family: "./assets/fonts/static/RedHatText-Regular.ttf";
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+#heading{
+    font-size: 40px;
+    font-weight: 900;
+    padding-left: 25px;
 }
 
 body{
     width: 1440px;
     height: 1080px;
+    background-color: whitesmoke;
 }
 
 #cart {
@@ -17,6 +24,8 @@ body{
 
 img {
     border-radius: 10px;
+    z-index: 1;
+    
 }
 
 #item {
@@ -24,12 +33,48 @@ img {
     border: 1px solid #ccc;
 }
 
-#add-to-cart{
-    display: flex;
+#add-to-cart {
+
     position: relative;
-    margin-left: 35%;
-    margin-top: -7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid #ff8a00;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 22%;
+    margin-top: -12%;
+    z-index: 2;
+
+    
 }
 
+#add-to-cart:hover {
+    background-color: #ff8a00;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+#description{
+    padding-top: 10px;
+}
+
+#dessert-type{
+    font-size: 90%;
+    color: rgba(54, 53, 53, 0.641);
+}
+
+#dessert-name{
+    font-weight: bold;
+}
+#price{
+    font-weight: 1000;
+    color: rgba(190, 29, 29, 0.641);
+}
 

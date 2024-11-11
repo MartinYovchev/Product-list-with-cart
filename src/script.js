@@ -31,7 +31,10 @@ const createItem = (image, dessertType, dessertName, price)=>{
 
     const priceDiv = document.createElement("div");
     priceDiv.id = "price";
-    priceDiv.textContent = price;
+    priceDiv.textContent = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    }).format(price);;
     descriptionDiv.appendChild(priceDiv);
 
     itemDiv.appendChild(descriptionDiv);
