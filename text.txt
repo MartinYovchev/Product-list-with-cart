@@ -1,60 +1,10 @@
+    <div id="cart-title">
+      Your Cart(num)
+    </div>
+    <div id="cart-items">
 
-  <!-- Desserts
-
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
-
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
-
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
-
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
-
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
-
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
-
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
-
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
-
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
-
-  Your Cart <!Quantity -->
-  <!-- Your added items will appear here -->
-
-  <!-- <div id="item">
-      <img src="" alt="">
-      <button id="add-to-cart">Add to Cart</button>
-      <div id="description">
-        <div id="dessert-type">Waffle</div>
-        <div id="dessert-name">Waffle with Berries</div>
-        <div id="dessert-price">$6.50</div>
-      </div>
-    </div> -->
+    </div>
+    <div id="cart-total">
+      <p>This is a carbon-neutral delivery</p>
+    </div>
+    <button id="confirm-order">Confirm Order</button>

@@ -1,15 +1,14 @@
-
-*{
+* {
     font-family: 'Red Hat Text', sans-serif;
 }
 
-#heading{
+#heading {
     font-size: 40px;
     font-weight: 900;
     padding-left: 25px;
 }
 
-body{
+body {
     width: 1440px;
     height: 1080px;
     background-color: whitesmoke;
@@ -25,16 +24,14 @@ body{
 img {
     border-radius: 10px;
     z-index: 1;
-    
 }
 
-#item {
+.item {
     padding: 20px;
     border: 1px solid #ccc;
 }
 
-#add-to-cart {
-
+.add-to-cart {
     position: relative;
     display: flex;
     align-items: center;
@@ -51,30 +48,68 @@ img {
     margin-left: 22%;
     margin-top: -12%;
     z-index: 2;
-
-    
 }
 
-#add-to-cart:hover {
+.add-to-cart:hover {
     background-color: #ff8a00;
     color: #fff;
     transform: scale(1.05);
 }
 
-#description{
+#description {
     padding-top: 10px;
 }
 
-#dessert-type{
+#dessert-type {
     font-size: 90%;
     color: rgba(54, 53, 53, 0.641);
 }
 
-#dessert-name{
+#dessert-name {
     font-weight: bold;
 }
-#price{
+
+#price {
     font-weight: 1000;
     color: rgba(190, 29, 29, 0.641);
 }
 
+button, .confirm-order {
+    all: unset;
+    cursor: pointer;
+}
+
+.selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+.increment, .decrement {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid #ff8a00;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.increment:hover, .decrement:hover {
+    background-color: #ff8a00;
+    color: #fff;
+}
+
+.counter {
+    font-size: 16px;
+    font-weight: 600;
+}
