@@ -1,10 +1,11 @@
+const cartItems = [];
+let totalPrice = 0;
+
 const displayItemCounter = (button) => {
-
     button.style.display = 'none';
-
     const selector = button.nextElementSibling;
     selector.style.display = 'flex';
-}
+};
 
 function incrementQuantity(counter) {
     let currentQuantity = parseInt(counter.textContent);
@@ -17,6 +18,13 @@ function decrementQuantity(counter) {
         counter.textContent = currentQuantity - 1;
     }
 }
+
+const addToCart = (dessertName, price, quantity) => {
+    const item = { dessertName, price, quantity };
+    cartItems.push(item);
+    totalPrice += price * quantity;
+    updateCartDisplay();
+};
 
 const createItem = (image, dessertType, dessertName, price) => {
     const itemDiv = document.createElement("div");
@@ -89,7 +97,48 @@ const createItem = (image, dessertType, dessertName, price) => {
     descriptionDiv.appendChild(priceDiv);
 
     itemDiv.appendChild(descriptionDiv);
+
+    button.addEventListener("click", function() {
+        const quantity = parseInt(buttonSpan.textContent);
+        addToCart(dessertName, price, quantity);
+    });
+
     return itemDiv;
+}
+
+const updateCartDisplay = () => {
+    const cartItemsDiv = document.getElementById("cart-items");
+    const totalPriceDiv = document.getElementById("total-price");
+
+    cartItemsDiv.innerHTML = '';
+
+    cartItems.forEach(item => {
+        const cartItemDiv = document.createElement("div");
+        cartItemDiv.classList.add("cart-item");
+        cartItemDiv.textContent = `${item.dessertName} - ${item.quantity} x 
+        ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(item.price)}`;
+        cartItemsDiv.appendChild(cartItemDiv);
+    });
+
+    totalPriceDiv.textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalPrice);
+};
+const confirmOrder = () => {
+    if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+    } else {
+        alert("Order Confirmed!");
+
+        location.reload()
+        cartItems.length = 0;
+        totalPrice = 0;
+
+        updateCartDisplay();
+    }
+};
+
+const confirmOrderButton = document.querySelector(".confirm-order");
+if (confirmOrderButton) {
+    confirmOrderButton.addEventListener("click", confirmOrder);
 }
 
 fetch("data.json")
@@ -100,7 +149,7 @@ fetch("data.json")
         return response.json();
     })
     .then(data => {
-        const cart = document.getElementById("cart");
+        const products = document.getElementById("products");
 
         data.forEach(item => {
             const image = item.image.desktop;
@@ -109,7 +158,7 @@ fetch("data.json")
             const price = item.price;
 
             const itemElement = createItem(image, dessertType, dessertName, price);
-            cart.appendChild(itemElement);
+            products.appendChild(itemElement);
         });
     })
     .catch(error => {
